@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DB49ACE1EE9172900F7FFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */; };
+		3DB49AD61EE9172A00F7FFF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */; };
+		3DB49AD81EE9172A00F7FFF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */; };
+		3DB49ADB1EE9172A00F7FFF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB49AD91EE9172A00F7FFF0 /* Main.storyboard */; };
+		3DB49AE31EE917DF00F7FFF0 /* PathScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49AE21EE917DF00F7FFF0 /* PathScene.swift */; };
+		3DB49AE51EE91AE400F7FFF0 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49AE41EE91AE400F7FFF0 /* Tile.swift */; };
+		3DB49AE81EE91C2D00F7FFF0 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49AE71EE91C2D00F7FFF0 /* World.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3DB49ACA1EE9172900F7FFF0 /* AStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DB49ADA1EE9172A00F7FFF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DB49ADC1EE9172A00F7FFF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB49AE21EE917DF00F7FFF0 /* PathScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathScene.swift; sourceTree = "<group>"; };
+		3DB49AE41EE91AE400F7FFF0 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		3DB49AE71EE91C2D00F7FFF0 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DB49AC71EE9172900F7FFF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DB49AC11EE9172900F7FFF0 = {
+			isa = PBXGroup;
+			children = (
+				3DB49ACC1EE9172900F7FFF0 /* AStar */,
+				3DB49ACB1EE9172900F7FFF0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DB49ACB1EE9172900F7FFF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DB49ACA1EE9172900F7FFF0 /* AStar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DB49ACC1EE9172900F7FFF0 /* AStar */ = {
+			isa = PBXGroup;
+			children = (
+				3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */,
+				3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */,
+				3DB49AE21EE917DF00F7FFF0 /* PathScene.swift */,
+				3DB49AE61EE91AEA00F7FFF0 /* Model */,
+				3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */,
+				3DB49AD91EE9172A00F7FFF0 /* Main.storyboard */,
+				3DB49ADC1EE9172A00F7FFF0 /* Info.plist */,
+			);
+			path = AStar;
+			sourceTree = "<group>";
+		};
+		3DB49AE61EE91AEA00F7FFF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DB49AE41EE91AE400F7FFF0 /* Tile.swift */,
+				3DB49AE71EE91C2D00F7FFF0 /* World.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DB49AC91EE9172900F7FFF0 /* AStar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DB49ADF1EE9172A00F7FFF0 /* Build configuration list for PBXNativeTarget "AStar" */;
+			buildPhases = (
+				3DB49AC61EE9172900F7FFF0 /* Sources */,
+				3DB49AC71EE9172900F7FFF0 /* Frameworks */,
+				3DB49AC81EE9172900F7FFF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AStar;
+			productName = AStar;
+			productReference = 3DB49ACA1EE9172900F7FFF0 /* AStar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DB49AC21EE9172900F7FFF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Lin Knudsen";
+				TargetAttributes = {
+					3DB49AC91EE9172900F7FFF0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3DB49AC51EE9172900F7FFF0 /* Build configuration list for PBXProject "AStar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DB49AC11EE9172900F7FFF0;
+			productRefGroup = 3DB49ACB1EE9172900F7FFF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DB49AC91EE9172900F7FFF0 /* AStar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DB49AC81EE9172900F7FFF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB49AD81EE9172A00F7FFF0 /* Assets.xcassets in Resources */,
+				3DB49ADB1EE9172A00F7FFF0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DB49AC61EE9172900F7FFF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB49AE81EE91C2D00F7FFF0 /* World.swift in Sources */,
+				3DB49AD61EE9172A00F7FFF0 /* ViewController.swift in Sources */,
+				3DB49AE31EE917DF00F7FFF0 /* PathScene.swift in Sources */,
+				3DB49AE51EE91AE400F7FFF0 /* Tile.swift in Sources */,
+				3DB49ACE1EE9172900F7FFF0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3DB49AD91EE9172A00F7FFF0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DB49ADA1EE9172A00F7FFF0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DB49ADD1EE9172A00F7FFF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DB49ADE1EE9172A00F7FFF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		3DB49AE01EE9172A00F7FFF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AStar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.lek.AStar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3DB49AE11EE9172A00F7FFF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AStar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.lek.AStar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DB49AC51EE9172900F7FFF0 /* Build configuration list for PBXProject "AStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DB49ADD1EE9172A00F7FFF0 /* Debug */,
+				3DB49ADE1EE9172A00F7FFF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DB49ADF1EE9172A00F7FFF0 /* Build configuration list for PBXNativeTarget "AStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DB49AE01EE9172A00F7FFF0 /* Debug */,
+				3DB49AE11EE9172A00F7FFF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DB49AC21EE9172900F7FFF0 /* Project object */;
+}
