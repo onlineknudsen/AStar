@@ -77,15 +77,18 @@ class PathScene: SKScene {
             switchBuildMode()
         }
         
-        if chars == "\n"
+        if chars == "p" || chars == "P"
         {
+            guard childNode(withName: START_NODE_NAME) != nil && childNode(withName: END_NODE_NAME) != nil else {
+                return
+            }
             
+            pathfind()
         }
     }
     
     override func mouseDown(with event: NSEvent) {
-        let rawMousePos = event.location(in: self)
-        let mousePos = CGPoint(x: rawMousePos.x - Tile.TILE_SIZE.width / 2, y: rawMousePos.y - Tile.TILE_SIZE.height / 2)
+        let mousePos = event.location(in: self)
         changeTileAt(mousePosition: mousePos)
     }
     
@@ -177,6 +180,29 @@ class PathScene: SKScene {
         
         if prevWalkable != tile.isWalkable {
             tileNode.fillColor = tile.isWalkable ? .white : .red
+        }
+    }
+    
+    private func pathfind()
+    {
+        let path = Path(world: world)
+        path.findPath(from: world.tileFrom(worldPosition: startNode.position)!, to: world.tileFrom(worldPosition: endNode.position)!)
+        
+        let tilesInPath = path.tilesInPath.toArray()
+        
+        for x in (0..<world.width)
+        {
+            for y in (0..<world.height)
+            {
+                if tilesInPath.contains(world.tiles[x][y])
+                {
+                    tileNodes[x][y].fillColor = .yellow
+                }
+                else
+                {
+                    tileNodes[x][y].fillColor = world.tiles[x][y].isWalkable ? .white : .red
+                }
+            }
         }
     }
 }

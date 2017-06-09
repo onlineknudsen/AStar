@@ -25,4 +25,8 @@ struct Stack<T>
     func peek() -> T? {
         return array.last
     }
+    
+    func toArray() -> [T] {
+        return array
+    }
 }

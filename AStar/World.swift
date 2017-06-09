@@ -40,8 +40,9 @@ class World
     
     func tileFrom(worldPosition: CGPoint) -> Tile?
     {
-        var percentX = worldPosition.x / worldSize.width
-        var percentY = worldPosition.y / worldSize.height
+        let noOffsetWorldPos = CGPoint(x: worldPosition.x - Tile.TILE_SIZE.width / 2, y: worldPosition.y - Tile.TILE_SIZE.height / 2)
+        var percentX = noOffsetWorldPos.x / worldSize.width
+        var percentY = noOffsetWorldPos.y / worldSize.height
         
         if percentX < 0
         {
@@ -71,6 +72,6 @@ class World
         let dX = abs(tileA.x - tileB.x)
         let dY = abs(tileA.y - tileB.y)
         
-        return Path.NONDIAGONAL_DISTANCE * (dX + dY) + (Path.DIAGONAL_DISTANCE - 2 * Path.DIAGONAL_DISTANCE) * min(dX, dY)
+        return dX + dY
     }
 }

@@ -48,7 +48,7 @@ class Path
             closedSet.append(current)
             
             if current == endTile {
-                //TODO: Retrace path
+                retracePath(from: startTile, to: endTile)
                 return
             }
             

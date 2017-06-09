@@ -65,10 +65,6 @@ class Tile
 
 extension Tile : Hashable {
     var hashValue: Int {
-        if let world = world
-        {
-            return "\(x),\(y)".hashValue ^ x + "\(world.height)".hashValue
-        }
         return "\(x),\(y)".hashValue ^ x - 7
     }
 }
