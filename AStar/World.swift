@@ -65,4 +65,12 @@ class World
         let y = Int(round(percentY * CGFloat(height)))
         return tiles[x][y]
     }
+    
+    func getDistance(_ tileA : Tile, _ tileB : Tile) -> Int
+    {
+        let dX = abs(tileA.x - tileB.x)
+        let dY = abs(tileA.y - tileB.y)
+        
+        return Path.NONDIAGONAL_DISTANCE * (dX + dY) + (Path.DIAGONAL_DISTANCE - 2 * Path.DIAGONAL_DISTANCE) * min(dX, dY)
+    }
 }

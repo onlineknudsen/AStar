@@ -76,6 +76,11 @@ class PathScene: SKScene {
         {
             switchBuildMode()
         }
+        
+        if chars == "\n"
+        {
+            
+        }
     }
     
     override func mouseDown(with event: NSEvent) {

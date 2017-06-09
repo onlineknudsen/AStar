@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0CD6BA1EEA5ECB00F20F97 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CD6B91EEA5ECB00F20F97 /* Path.swift */; };
+		3D0CD6BE1EEA6BF800F20F97 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CD6BD1EEA6BF800F20F97 /* Stack.swift */; };
 		3DB49ACE1EE9172900F7FFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */; };
 		3DB49AD61EE9172A00F7FFF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */; };
 		3DB49AD81EE9172A00F7FFF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0CD6B91EEA5ECB00F20F97 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		3D0CD6BD1EEA6BF800F20F97 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		3DB49ACA1EE9172900F7FFF0 /* AStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0CD6BB1EEA612400F20F97 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3D0CD6BD1EEA6BF800F20F97 /* Stack.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		3D0CD6BC1EEA613100F20F97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */,
+				3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */,
+				3DB49AD91EE9172A00F7FFF0 /* Main.storyboard */,
+				3DB49ADC1EE9172A00F7FFF0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		3DB49AC11EE9172900F7FFF0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +81,11 @@
 		3DB49ACC1EE9172900F7FFF0 /* AStar */ = {
 			isa = PBXGroup;
 			children = (
-				3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */,
+				3D0CD6BC1EEA613100F20F97 /* Supporting Files */,
+				3D0CD6BB1EEA612400F20F97 /* Other */,
 				3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */,
 				3DB49AE21EE917DF00F7FFF0 /* PathScene.swift */,
 				3DB49AE61EE91AEA00F7FFF0 /* Model */,
-				3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */,
-				3DB49AD91EE9172A00F7FFF0 /* Main.storyboard */,
-				3DB49ADC1EE9172A00F7FFF0 /* Info.plist */,
 			);
 			path = AStar;
 			sourceTree = "<group>";
@@ -72,6 +93,7 @@
 		3DB49AE61EE91AEA00F7FFF0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D0CD6B91EEA5ECB00F20F97 /* Path.swift */,
 				3DB49AE41EE91AE400F7FFF0 /* Tile.swift */,
 				3DB49AE71EE91C2D00F7FFF0 /* World.swift */,
 			);
@@ -151,8 +173,10 @@
 			files = (
 				3DB49AE81EE91C2D00F7FFF0 /* World.swift in Sources */,
 				3DB49AD61EE9172A00F7FFF0 /* ViewController.swift in Sources */,
+				3D0CD6BE1EEA6BF800F20F97 /* Stack.swift in Sources */,
 				3DB49AE31EE917DF00F7FFF0 /* PathScene.swift in Sources */,
 				3DB49AE51EE91AE400F7FFF0 /* Tile.swift in Sources */,
+				3D0CD6BA1EEA5ECB00F20F97 /* Path.swift in Sources */,
 				3DB49ACE1EE9172900F7FFF0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
