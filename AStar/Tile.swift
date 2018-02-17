@@ -12,10 +12,10 @@ class Tile
 {
     static let tileSize : CGSize = CGSize(width: 50, height: 50)
     
-    fileprivate(set) var x: Int
-    fileprivate(set) var y: Int
+    private(set) var x: Int
+    private(set) var y: Int
     
-    fileprivate weak var world : World?
+    private weak var world : World?
     
     var isWalkable : Bool
     

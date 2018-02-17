@@ -67,6 +67,7 @@ class World
         return tiles[x][y]
     }
     
+    //Manhattan heuristic
     func getDistance(_ tileA : Tile, _ tileB : Tile) -> Int
     {
         let dX = abs(tileA.x - tileB.x)

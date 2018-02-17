@@ -10,7 +10,7 @@ import Foundation
 
 struct Stack<T>
 {
-    fileprivate var array: [T] = []
+    private var array: [T] = []
     
     mutating func push(_ element : T)
     {

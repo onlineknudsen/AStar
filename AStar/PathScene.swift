@@ -22,10 +22,10 @@ class PathScene: SKScene {
     let startNode : SKShapeNode
     let endNode : SKShapeNode
     
-    let UI_Z_POS : CGFloat = 1.0
-    let PATH_ENDPOINT_Z_POS : CGFloat = 0.1
-    let START_NODE_NAME : String = "StartNode"
-    let END_NODE_NAME : String = "EndNode"
+    let uiZPosition : CGFloat = 1.0
+    let pathEndPointZPosition : CGFloat = 0.1
+    let startNodeName : String = "StartNode"
+    let endNodeName : String = "EndNode"
 
     var buildMode : BuildMode = .walkable {
         didSet {
@@ -41,16 +41,16 @@ class PathScene: SKScene {
         modeLabel = SKLabelNode()
         
         startNode = SKShapeNode(circleOfRadius: Tile.tileSize.width / 2 )
-        startNode.name = START_NODE_NAME
+        startNode.name = startNodeName
         startNode.fillColor = .green
         startNode.strokeColor = .black
-        startNode.zPosition = PATH_ENDPOINT_Z_POS
+        startNode.zPosition = pathEndPointZPosition
         
         endNode = SKShapeNode(circleOfRadius: Tile.tileSize.width / 2)
-        endNode.name = END_NODE_NAME
+        endNode.name = endNodeName
         endNode.fillColor = .blue
         endNode.strokeColor = .black
-        endNode.zPosition = PATH_ENDPOINT_Z_POS
+        endNode.zPosition = pathEndPointZPosition
         
         super.init(size: size)
     }
@@ -79,7 +79,7 @@ class PathScene: SKScene {
         
         if chars == "p" || chars == "P"
         {
-            guard childNode(withName: START_NODE_NAME) != nil && childNode(withName: END_NODE_NAME) != nil else {
+            guard childNode(withName: startNodeName) != nil && childNode(withName: endNodeName) != nil else {
                 return
             }
             
@@ -94,7 +94,7 @@ class PathScene: SKScene {
     
     private func drawModeLabel()
     {
-        modeLabel.zPosition = UI_Z_POS
+        modeLabel.zPosition = uiZPosition
         modeLabel.text = buildMode.rawValue
         modeLabel.fontColor = NSColor(calibratedWhite: 0.6, alpha: 1.0)
         modeLabel.fontName = "AvenirNext-Medium"
@@ -148,7 +148,7 @@ class PathScene: SKScene {
         case .walkable:
             tile.isWalkable = true
         case .unwalkable:
-            if childNode(withName: START_NODE_NAME) != nil || childNode(withName: END_NODE_NAME) != nil
+            if childNode(withName: startNodeName) != nil || childNode(withName: endNodeName) != nil
             {
                 if tileNode.position == startNode.position || tileNode.position == endNode.position
                 {
@@ -158,7 +158,7 @@ class PathScene: SKScene {
             
             tile.isWalkable = false
         case .start:
-            if childNode(withName: START_NODE_NAME) == nil {
+            if childNode(withName: startNodeName) == nil {
                 addChild(startNode)
             }
             
@@ -167,7 +167,7 @@ class PathScene: SKScene {
             }
             startNode.position = tileNode.position
         case .end:
-            if childNode(withName: END_NODE_NAME) == nil {
+            if childNode(withName: endNodeName) == nil {
                 addChild(endNode)
             }
             
