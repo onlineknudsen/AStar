@@ -10,7 +10,7 @@ import Foundation
 
 class Tile
 {
-    static let TILE_SIZE : CGSize = CGSize(width: 50, height: 50)
+    static let tileSize : CGSize = CGSize(width: 50, height: 50)
     
     fileprivate(set) var x: Int
     fileprivate(set) var y: Int

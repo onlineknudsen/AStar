@@ -40,13 +40,13 @@ class PathScene: SKScene {
         world = World(size: size)
         modeLabel = SKLabelNode()
         
-        startNode = SKShapeNode(circleOfRadius: Tile.TILE_SIZE.width / 2 )
+        startNode = SKShapeNode(circleOfRadius: Tile.tileSize.width / 2 )
         startNode.name = START_NODE_NAME
         startNode.fillColor = .green
         startNode.strokeColor = .black
         startNode.zPosition = PATH_ENDPOINT_Z_POS
         
-        endNode = SKShapeNode(circleOfRadius: Tile.TILE_SIZE.width / 2)
+        endNode = SKShapeNode(circleOfRadius: Tile.tileSize.width / 2)
         endNode.name = END_NODE_NAME
         endNode.fillColor = .blue
         endNode.strokeColor = .black
@@ -109,10 +109,10 @@ class PathScene: SKScene {
             var col = [SKShapeNode]()
             for y in (0..<world.height)
             {
-                let node = SKShapeNode(rectOf: Tile.TILE_SIZE)
+                let node = SKShapeNode(rectOf: Tile.tileSize)
                 node.fillColor = world.tiles[x][y].isWalkable ? .white : .red
                 node.strokeColor = .black
-                node.position = CGPoint(x: Tile.TILE_SIZE.width * CGFloat(x) + Tile.TILE_SIZE.width / 2, y: Tile.TILE_SIZE.height * CGFloat(y) + Tile.TILE_SIZE.height / 2)
+                node.position = CGPoint(x: Tile.tileSize.width * CGFloat(x) + Tile.tileSize.width / 2, y: Tile.tileSize.height * CGFloat(y) + Tile.tileSize.height / 2)
                 addChild(node)
                 col.append(node)
             }

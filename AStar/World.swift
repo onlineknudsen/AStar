@@ -19,8 +19,8 @@ class World
     
     init(size : CGSize)
     {
-        width = Int(round(size.width / Tile.TILE_SIZE.width))
-        height = Int(round(size.height / Tile.TILE_SIZE.height))
+        width = Int(round(size.width / Tile.tileSize.width))
+        height = Int(round(size.height / Tile.tileSize.height))
         worldSize = size
         createTiles()
     }
@@ -40,7 +40,7 @@ class World
     
     func tileFrom(worldPosition: CGPoint) -> Tile?
     {
-        let noOffsetWorldPos = CGPoint(x: worldPosition.x - Tile.TILE_SIZE.width / 2, y: worldPosition.y - Tile.TILE_SIZE.height / 2)
+        let noOffsetWorldPos = CGPoint(x: worldPosition.x - Tile.tileSize.width / 2, y: worldPosition.y - Tile.tileSize.height / 2)
         var percentX = noOffsetWorldPos.x / worldSize.width
         var percentY = noOffsetWorldPos.y / worldSize.height
         

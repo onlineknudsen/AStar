@@ -14,16 +14,19 @@ class Path
     
     private var world : World
     
-    static let DIAGONAL_DISTANCE : Int = 14
-    static let NONDIAGONAL_DISTANCE : Int = 10
+    static let diagonalDistance : Int = 14
+    static let nondiagonalDistance : Int = 10
     
     init(world : World)
     {
         self.world = world
     }
     
+    private var count = 0
+    
     func findPath(from startTile : Tile, to endTile : Tile)
     {
+        count += 1
         var openSet = [Tile] ()
         var closedSet = [Tile] ()
         
@@ -32,7 +35,6 @@ class Path
         while !openSet.isEmpty
         {
             var current = openSet[0]
-            
             for t in openSet
             {
                 if t.fCost < current.fCost || (t.fCost == current.fCost && t.gCost < current.gCost) {
@@ -40,11 +42,11 @@ class Path
                 }
             }
             
-            guard let indexOfCurr = openSet.index(of: current) else {
+            guard let currIndex = openSet.index(of: current) else {
                 return
             }
             
-            openSet.remove(at: indexOfCurr)
+            openSet.remove(at: currIndex)
             closedSet.append(current)
             
             if current == endTile {
