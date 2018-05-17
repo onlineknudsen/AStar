@@ -68,28 +68,9 @@ class PathScene: SKScene {
         endNode.position = tileNodes[0][0].position
     }
     
-    override func keyDown(with event: NSEvent)
-    {
-        guard let chars = event.characters else { return }
-        
-        if chars == "b" || chars == "B"
-        {
-            switchBuildMode()
-        }
-        
-        if chars == "p" || chars == "P"
-        {
-            guard childNode(withName: startNodeName) != nil && childNode(withName: endNodeName) != nil else {
-                return
-            }
-            
-            pathfind()
-        }
-    }
-    
     override func mouseDown(with event: NSEvent) {
         let mousePos = event.location(in: self)
-        changeTileAt(mousePosition: mousePos)
+        onTileClick(mousePosition: mousePos)
     }
     
     private func drawModeLabel()
@@ -120,7 +101,7 @@ class PathScene: SKScene {
         }
     }
     
-    private func switchBuildMode()
+    func switchBuildMode()
     {
         switch buildMode
         {
@@ -135,7 +116,7 @@ class PathScene: SKScene {
         }
     }
     
-    private func changeTileAt(mousePosition: CGPoint)
+    private func onTileClick(mousePosition: CGPoint)
     {
         guard let tile = world.tileFrom(worldPosition: mousePosition) else {
             print("No tile from world position")
@@ -166,6 +147,7 @@ class PathScene: SKScene {
                 return
             }
             startNode.position = tileNode.position
+            startNode.isHidden = false
         case .end:
             if childNode(withName: endNodeName) == nil {
                 addChild(endNode)
@@ -176,6 +158,7 @@ class PathScene: SKScene {
             }
             
             endNode.position = tileNode.position
+            endNode.isHidden = false
         }
         
         if prevWalkable != tile.isWalkable {
@@ -183,12 +166,29 @@ class PathScene: SKScene {
         }
     }
     
-    private func pathfind()
+    func pathfind()
     {
+        guard (childNode(withName: startNodeName) != nil || startNode.isHidden) && (childNode(withName: endNodeName) != nil || endNode.isHidden) else {
+            let alert = NSAlert()
+            alert.messageText = "Missing start or end node found."
+            alert.informativeText = "Please add the missing start or end node."
+            alert.addButton(withTitle: "Ok")
+            alert.runModal()
+            return
+        }
+        
         let path = Path(world: world)
         path.findPath(from: world.tileFrom(worldPosition: startNode.position)!, to: world.tileFrom(worldPosition: endNode.position)!)
         
         let tilesInPath = path.tilesInPath.toArray()
+        
+        if tilesInPath.isEmpty {
+            let alert = NSAlert()
+            alert.messageText = "Path not found."
+            alert.addButton(withTitle: "Ok")
+            alert.runModal()
+            return
+        }
         
         for x in (0..<world.width)
         {
@@ -204,5 +204,20 @@ class PathScene: SKScene {
                 }
             }
         }
+    }
+    
+    func clearWorld()
+    {
+        print("Clearing...")
+        world.clear()
+        for x in (0..<world.width)
+        {
+            for y in (0..<world.height)
+            {
+                tileNodes[x][y].fillColor = .white
+            }
+        }
+        startNode.isHidden = true
+        endNode.isHidden = true
     }
 }

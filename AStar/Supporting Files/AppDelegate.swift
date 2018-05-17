@@ -21,5 +21,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    @IBAction func onMenuFindPathClick(_ sender: NSMenuItem) {
+        if let pathScene = (NSApplication.shared.mainWindow?.contentViewController as? ViewController)?.scene {
+            pathScene.pathfind()
+        }
+    }
     
+    @IBAction func onMenuClearClick(_ sender: NSMenuItem) {
+        if let pathScene = (NSApplication.shared.mainWindow?.contentViewController as? ViewController)?.scene {
+            pathScene.clearWorld()
+        }
+    }
+    
+    @IBAction func onMenuSwitchBuildModeClick(_ sender: NSMenuItem) {
+        if let pathScene = (NSApplication.shared.mainWindow?.contentViewController as? ViewController)?.scene {
+            pathScene.switchBuildMode()
+        }
+    }
 }

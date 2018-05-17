@@ -40,9 +40,9 @@ class World
     
     func tileFrom(worldPosition: CGPoint) -> Tile?
     {
-        let noOffsetWorldPos = CGPoint(x: worldPosition.x - Tile.tileSize.width / 2, y: worldPosition.y - Tile.tileSize.height / 2)
-        var percentX = noOffsetWorldPos.x / worldSize.width
-        var percentY = noOffsetWorldPos.y / worldSize.height
+        let adjustedWorldPos = CGPoint(x: worldPosition.x - Tile.tileSize.width / 2, y: worldPosition.y - Tile.tileSize.height / 2)
+        var percentX = adjustedWorldPos.x / worldSize.width
+        var percentY = adjustedWorldPos.y / worldSize.height
         
         if percentX < 0
         {
@@ -65,6 +65,17 @@ class World
         let x = Int(round(percentX * CGFloat(width)))
         let y = Int(round(percentY * CGFloat(height)))
         return tiles[x][y]
+    }
+    
+    func clear()
+    {
+        for x in (0..<width)
+        {
+            for y in (0..<height)
+            {
+                tiles[x][y].isWalkable = true
+            }
+        }
     }
     
     //Manhattan heuristic

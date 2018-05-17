@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D0CD6BA1EEA5ECB00F20F97 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CD6B91EEA5ECB00F20F97 /* Path.swift */; };
 		3D0CD6BE1EEA6BF800F20F97 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CD6BD1EEA6BF800F20F97 /* Stack.swift */; };
+		3D3481B52037F755007E2587 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 3D3481B42037F755007E2587 /* TODO */; };
 		3DB49ACE1EE9172900F7FFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */; };
 		3DB49AD61EE9172A00F7FFF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */; };
 		3DB49AD81EE9172A00F7FFF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3D0CD6B91EEA5ECB00F20F97 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		3D0CD6BD1EEA6BF800F20F97 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		3D3481B42037F755007E2587 /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		3DB49ACA1EE9172900F7FFF0 /* AStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +51,6 @@
 				3DB49ACD1EE9172900F7FFF0 /* AppDelegate.swift */,
 				3DB49AD71EE9172A00F7FFF0 /* Assets.xcassets */,
 				3DB49AD91EE9172A00F7FFF0 /* Main.storyboard */,
-				3DB49ADC1EE9172A00F7FFF0 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -96,6 +97,8 @@
 				3D7CB77F2037BF0D007DD783 /* Supporting Files */,
 				3DB49AD51EE9172A00F7FFF0 /* ViewController.swift */,
 				3DB49AE21EE917DF00F7FFF0 /* PathScene.swift */,
+				3DB49ADC1EE9172A00F7FFF0 /* Info.plist */,
+				3D3481B42037F755007E2587 /* TODO */,
 			);
 			path = AStar;
 			sourceTree = "<group>";
@@ -127,7 +130,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lin Knudsen";
 				TargetAttributes = {
 					3DB49AC91EE9172900F7FFF0 = {
@@ -160,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3481B52037F755007E2587 /* TODO in Resources */,
 				3DB49AD81EE9172A00F7FFF0 /* Assets.xcassets in Resources */,
 				3DB49ADB1EE9172A00F7FFF0 /* Main.storyboard in Resources */,
 			);
@@ -210,6 +214,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -217,6 +222,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -266,6 +272,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -273,6 +280,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -309,7 +317,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.lek.AStar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -323,7 +331,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.lek.AStar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

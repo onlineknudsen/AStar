@@ -14,18 +14,22 @@ class ViewController: NSViewController {
 
     @IBOutlet var skView: SKView!
     
+    var scene: PathScene?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let view = skView {
             // Load the SKScene from 'GameScene.sks'
-            let scene = PathScene(size: CGSize(width: view.frame.width, height: view.frame.height))
-            scene.scaleMode = .aspectFill
+            scene = PathScene(size: CGSize(width: view.frame.width, height: view.frame.height))
+            scene?.scaleMode = .aspectFill
             
             view.presentScene(scene)
             view.showsNodeCount = true
             view.showsFPS = true
         }
     }
+    
+    
 }
 

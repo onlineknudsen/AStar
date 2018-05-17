@@ -22,19 +22,24 @@ class Path
         self.world = world
     }
     
-    private var count = 0
-    
     func findPath(from startTile : Tile, to endTile : Tile)
     {
-        count += 1
+        //The start tile should never have a parent, or an infinite loop will happen
+        startTile.parent = nil
+        
         var openSet = [Tile] ()
         var closedSet = [Tile] ()
         
+        //We want to explore the start tile
         openSet.append(startTile)
         
+        //As long as there are possibilities to check, we should keep running the algorithm
         while !openSet.isEmpty
         {
+            //The first tile in the open set should be the one we are on
             var current = openSet[0]
+            
+            //However, if there is another tile in the open set that has a lower f-cost or, if a tie, a lower g-cost, we will pick that one instead.
             for t in openSet
             {
                 if t.fCost < current.fCost || (t.fCost == current.fCost && t.gCost < current.gCost) {
@@ -42,21 +47,50 @@ class Path
                 }
             }
             
-            guard let currIndex = openSet.index(of: current) else {
+            guard let currentIndex = openSet.index(of: current) else {
                 return
             }
             
-            openSet.remove(at: currIndex)
+            //Since we have now "explored" the current tile, we can put it in the closed set.
+            openSet.remove(at: currentIndex)
             closedSet.append(current)
             
+            //Are we there yet?
             if current == endTile {
                 retracePath(from: startTile, to: endTile)
                 return
             }
             
+            //We need to find our next options
             for neighbor in current.getNeighbors()
             {
-                if !neighbor.isWalkable || closedSet.contains(neighbor) {
+                //We don't want our path to cut corners. That's not realistic and looks disgusting.
+                var cutsCorner = false
+                //is it the top left corner?
+                if neighbor.x == current.x - 1 && neighbor.y  == current.y + 1 {
+                    //If so, are the tiles to the right or bottom of it blocked?
+                    if !world.tiles[neighbor.x + 1][neighbor.y].isWalkable || !world.tiles[neighbor.x][neighbor.y - 1].isWalkable {
+                        //If so, that is cutting a corner and IS NOT ACCEPTABLE!
+                        cutsCorner = true
+                    }
+                } //Repeat for other corners
+                else if neighbor.x == current.x + 1 && neighbor.y == current.y + 1 { //Is it a top right corner?
+                    if !world.tiles[neighbor.x - 1][neighbor.y].isWalkable || !world.tiles[neighbor.x][neighbor.y - 1].isWalkable {
+                        cutsCorner = true
+                    }
+                }
+                else if neighbor.x == current.x - 1 && neighbor.y == current.y - 1 { //Is it a bottom left corner?
+                    if !world.tiles[neighbor.x + 1][neighbor.y].isWalkable || !world.tiles[neighbor.x][neighbor.y + 1].isWalkable {
+                        cutsCorner = true
+                    }
+                }
+                else if neighbor.x == current.x + 1 && neighbor.y == current.y - 1 { //Is it a bottom right corner?
+                    if !world.tiles[neighbor.x - 1][neighbor.y].isWalkable || !world.tiles[neighbor.x][neighbor.y + 1].isWalkable {
+                        cutsCorner = true
+                    }
+                }
+                
+                if !neighbor.isWalkable || closedSet.contains(neighbor) || cutsCorner {
                     continue
                 }
                 
