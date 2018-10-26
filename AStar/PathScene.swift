@@ -217,7 +217,7 @@ class PathScene: SKScene {
                 tileNodes[x][y].fillColor = .white
             }
         }
-        startNode.isHidden = true
-        endNode.isHidden = true
+        startNode.removeFromParent()
+        endNode.removeFromParent()
     }
 }
